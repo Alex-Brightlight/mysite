@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ page.book }} | {{ site.title }}</title>
+  <!-- CSS uses baseurl -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title">
+      <!-- Link to site root with baseurl -->
+      <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </h1>
+  </header>
+
+ <main class="site-content">
+  <h2>{{ page.title }}</h2>
+  <p><strong>Book:</strong> {{ page.book }} | <strong>Date:</strong> {{ page.date | date: "%B %d, %Y" }}</p>
+  {{ content }}
+
+  <!-- Back to Restless Bookshelf link -->
+  <p class="entry-back">
+    <a href="{{ site.baseurl }}/bookshelf/">← Back to the Restless Bookshelf</a>
+  </p>
+</main>
+
+  <footer class="site-footer">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}.</p>
+  </footer>
+</body>
+</html>

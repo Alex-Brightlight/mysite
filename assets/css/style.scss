@@ -1,0 +1,248 @@
+---
+# front matter required so Jekyll processes this file
+---
+
+/* =========================
+   Brand Colors
+   ========================= */
+$background: #212424;       // Main background color of the site
+$text: #E1E1E1;             // Default text color
+$link: #41C7C7;              // Link color
+$link-hover: lighten($link, 15%); // Slightly lighter color on hover
+
+/* =========================
+   Base Styles for Body
+   ========================= */
+body {
+  background-color: $background;  // Sets the page background
+  color: $text;                  // Sets the default text color
+  font-family: system-ui, sans-serif; // Base font family
+  margin: 0;                      // Remove default browser margin
+  line-height: 1.6;               // Default line spacing
+}
+
+/* =========================
+   Links (Global)
+   ========================= */
+a,
+a:visited,
+strong a,
+em a,
+strong em a {
+  color: $link !important;       // Force brand link color
+  text-decoration: none;         // No underline by default
+  transition: color 0.3s ease;  // Smooth color transition on hover
+}
+
+a:hover,
+strong a:hover,
+em a:hover,
+strong em a:hover {
+  color: $link-hover !important; // Link color on hover
+  text-decoration: underline;    // Always underline on hover
+}
+
+/* =========================
+   Site Header
+   ========================= */
+.site-header {
+  background: $background;       // Match the site background
+  text-align: center;            // Center all header content
+  padding: 1.2rem 1rem;          // Space inside header
+
+  /* Site Title */
+  .site-title {
+    margin: 0;                   // Remove default margin
+    font-size: 2.2rem;           // Larger title text
+    font-weight: 700;            // Bold title
+    letter-spacing: 0.5px;       // Slight spacing between letters
+
+    a {
+      text-decoration: none;     // No underline for title link
+    }
+  }
+
+  /* Navigation Menu */
+  .site-nav {
+    margin-top: 0;               // Remove space above navigation
+
+    ul {
+      list-style: none;          // Remove bullet points
+      margin: 0;                 // Remove default margin
+      padding: 0;                // Remove default padding
+      display: inline-flex;      // Horizontal layout for links
+      gap: 1rem;                 // Space between navigation items
+      justify-content: center;   // Center the navigation horizontally
+    }
+
+    a {
+      font-weight: 500;           // Medium weight for nav links
+      font-size: 0.95rem;         // Slightly smaller text
+    }
+  }
+}
+
+/* =========================
+   Main Content Area
+   ========================= */
+.site-content {
+  max-width: 700px;              // Limits content width for readability
+  margin: 2rem auto;             // Center content with top/bottom spacing
+  padding: 0 1rem;               // Side padding for small screens
+}
+
+/* Style all blockquotes */
+blockquote {
+    background-color: #2b2b2b;      /* subtle grey box */
+    border-left: 4px solid #555;    /* understated highlight */
+    padding: 0.8rem 1.3rem;
+    margin: 1.5rem 0;
+    color: #e0e0e0;                 /* light text on dark background */
+    font-style: normal;
+    border-radius: 5px;
+    font-family: "Georgia", "Times New Roman", serif; /* serif font */
+}
+
+/* Author styling */
+blockquote p:last-child {
+    font-size: 0.9em;
+    color: #aaa;                     /* subtle author color */
+    text-align: left;                /* left-aligned now */
+    font-style: normal;              /* upright */
+    margin-top: 0.5rem;
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+  text-align: center;            // Centered footer text
+  padding: 2rem 1rem;            // Internal spacing
+  font-size: 0.9rem;             // Slightly smaller text
+  border-top: 1px solid darken($background, 10%); // Subtle top border
+  margin-top: 3rem;              // Space between main content and footer
+
+  p {
+    margin: 0;                   // Remove default paragraph margin
+  }
+}
+
+/* =========================
+   404 Error Page
+   ========================= */
+.error-page {
+  text-align: center;            // Center all text
+  margin: 5rem 2rem;             // Space around content
+  color: $text;                  // Use site text color
+
+  h1 {
+    font-size: 3rem;             // Large heading for visibility
+    color: $link;                // Highlighted color
+    margin-bottom: 1rem;         // Space below heading
+  }
+
+  p {
+    font-size: 1.2rem;           // Slightly larger paragraph text
+    margin-bottom: 1rem;         // Space below paragraph
+  }
+
+  ul {
+    list-style: none;            // Remove bullets
+    padding: 0;                  // Remove padding
+
+    li {
+      display: inline-block;     // Horizontal list items
+      margin: 0 1rem;            // Spacing between items
+    }
+  }
+}
+
+/* =========================
+   Header Styles (All levels)
+   ========================= */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.5em;             // Reduce space above header
+  margin-bottom: 0.25em;         // Reduce space below header
+  line-height: 1.2;              // Tighter line spacing
+  font-weight: 600;              // Slightly lighter than bold
+}
+
+/* Paragraphs immediately following headers */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+  margin-top: 0.25em;            // Reduce spacing between header and text
+}
+
+/* Flex container for headers with icons/SVG bullets */
+.flex-header {
+  display: flex;                 // Arrange icon and text horizontally
+  align-items: center;           // Align vertically
+  gap: 0.5em;                    // Space between icon and text
+  margin-top: 0.5em;             // Top spacing
+  margin-bottom: 0.25em;         // Bottom spacing
+  line-height: 1.2;              // Tighter vertical alignment
+}
+
+/* Flex headers and spacing adjustments */
+.flex-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;        /* Space between SVG and text */
+  margin-top: 0.25em;   /* Reduce top spacing */
+  margin-bottom: 0.25em; /* Reduce bottom spacing */
+  line-height: 1.2;
+}
+
+.flex-header h3 {
+  margin: 0;           /* Remove default heading margin */
+  font-weight: 600;
+}
+
+/* Paragraphs immediately after flex-header */
+.flex-header + p {
+  margin-top: 0.25em;  /* Tight spacing after description paragraph */
+}
+
+
+/* =========================
+   Section Anchors
+   ========================= */
+h2 {
+  margin-top: 2rem;              // Space above major section headings
+  scroll-margin-top: 5rem;       // Prevent anchor target from being hidden by fixed header
+}
+
+/* =========================
+   Post Dates
+   ========================= */
+.post-date {
+  font-weight: 400;               // Lighter weight for date
+  font-size: 0.55em;              // Small text for subtlety
+}
+
+.entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entry-item {
+  margin-bottom: 0.8em;
+}
+
+.entry-title {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.entry-date {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-left: 0.3em;
+}
+
+.entry-book {
+  font-size: 0.95em;
+  color: #555;
+  margin-left: 1em; /* subtle indentation */
+}

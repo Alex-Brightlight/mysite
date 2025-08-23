@@ -1,0 +1,16 @@
+title: Alex Brightlight
+author: Alex Brightlight
+description: > 
+  Your site description here
+markdown: kramdown
+
+url: "https://alexbrightlight.me" 
+baseurl: "" 
+
+sass:
+  style: compressed
+
+collections:
+  books:
+    output: true
+    permalink: /books/:title/
